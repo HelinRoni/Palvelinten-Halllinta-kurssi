@@ -18,12 +18,15 @@ x) Lue ja tiivistä
 
   a) Asenna Debian 13 virtuaalikoneellesi
   <img width="623" height="142" alt="Tehtävä h0a" src="https://github.com/user-attachments/assets/57a4daf5-2b57-48d8-b105-587878447865" />
-  kuvan nimestä näkee että, Debian 13 on ladattu. Sekä, että olen vuokrannut virtuaalipalvelimen.
+
+   kuvan nimestä näkee että, Debian 13 on ladattu. Sekä, että olen vuokrannut virtuaalipalvelimen.
 
   c) asensin palomuurin ja loin sudo käyttäjän
+  
   <img width="487" height="63" alt="palomuuri1" src="https://github.com/user-attachments/assets/e9a93d5b-1df9-4cb9-8ae5-2a1e80dddce5" />
 
  d.) asensin apache webbipalvelimen käytin komentoja sudo apt install apache2 -y, sudo apt update.
+ 
  <img width="1313" height="881" alt="apache kuva" src="https://github.com/user-attachments/assets/e0e319ef-c418-4334-8bfc-bdb48050520a" />
 
  
