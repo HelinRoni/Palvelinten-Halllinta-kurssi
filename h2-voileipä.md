@@ -28,4 +28,8 @@ Komennot jota käytin:
 
 <img width="472" height="80" alt="image" src="https://github.com/user-attachments/assets/ea1d3187-0da5-49c7-b39b-4fe09769a1b6" />
 
+## b) Antero  
+
+  
+
 
