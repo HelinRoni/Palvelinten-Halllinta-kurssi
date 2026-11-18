@@ -1,6 +1,22 @@
-# Demoni
+  # Demoni   
+## x) Lue ja tiivistä  
+Artikkeli Karvinen 2026: Apache installed with Ansible - quick notes.  
+  - Yksinkertaistettu ansible malli. Malli paketti-tiedosto-palvelin kuviosta. Muistiinpanot vain, ei tutoriaali.
+  - Apache2 automaattinen lataus. Sivuja pystyy muokkaamaan normaalina käyttäjänä ilman sudoa taikka roottia.
+  - 
 
-## a) Apassi. Asenna apache 2  
+## Y) Etsi artikkeli keskeisestä hallinnasta.  
+
+Linkki artikkeliin: https://news.ycombinator.com/item?id=16445612  
+  - Cockpit on työkalu, jolla linux-palvelimia voi hallita selaimen kautta.
+  - Keskustelussa nostetaan esiin erityisesti helppokäyttöisyys ja palvelinten hallinnan yksinkertaistaminen.
+  - Sen avulla järjestelmän ylläpitäjä voi seurata ja hallita palvelimia keskitetysti ilman, että jokaiseen palvelimeen tarvitsee kirjautua erikseen
+    komentorivillä.
+  - Hacker Newsin keskustelussa pohdittiin myös tietoturvaa, erityisesti SSH-tunnistautumista ja salasanojen turvallisuutta.
+Huomioni. Cockpit;in idea on samanlainen kuin ansiblen. Keskitetyn hallinnan ideana. Niillä helppo pitää useita palvelimia kasassa ja ajantasalla yhtäaikaisesti.
+
+
+## a) Apassi. Asenna apache 2 
 
 Kun alan asentamaan apache 2 pakettia. Ensiksi Päivitän järjestelmäni jonka jälkeen voin asentaa apache 2. Käytin tähän komentoja:  
   -_$ sudo apt update_ (päivittää järjestelmän)  
@@ -43,6 +59,43 @@ Käytin komentoja:
 Tämän jälkeen loin samanlaiset tiedostot puunsisälle ja annoin samat määritykset kuin tehtävässä a. Tehtävän a ja b verkkosivu määritykset katsoin mallia Tero Karvisen artikkelista "Apache installed with Ansible - quick notes".  
 Linkki kyseiseen artikkeliin: https://terokarvinen.com/apache-ansible/    
 Tämän jälkeen tarkistin vielä toimiiko nginx kunnolla laittamalla verkkoselaimeen ip osoitteen.  
+
+## c) Automoottorix. Automatisoi Nginx asennus ansiblella.  
+
+Kun lähden muokkaamaan Nginx;in asennusta. Teen melkein kaikki muutokset vain (b) kohdan hakemistoon ja tiedostojen sisälle.  
+Menin nginx/tasks/main.yml ja lisäsin tälläisen pätkän tekstiä sinne. Määritykset tarkistaa, että onko nginx asennettu ja jos ei ole niin asentaa, määriteliin tiedoston omistaja sekä käyttöoikeudet, poistin alkuperäisen nginx sivuston tieltä häiritsemästä jottei se vaikuta tähän ja varmistaa, että nginx käynnistyy itse tietokoneen käynnistäessä.  
+
+<img width="656" height="623" alt="image" src="https://github.com/user-attachments/assets/63488cc0-9534-4fb1-bc6d-cade573a60a2" />  
+
+Sitten määrittelin mistä sivuni löytää ja sen asetukset. Tein nämä muutokset nginx/files/example.com.conf sisälle.  
+
+
+<img width="448" height="257" alt="image" src="https://github.com/user-attachments/assets/0c18b92d-efd2-48d1-b2f7-fbbaf9c3ac44" />     
+
+Sitten vain testailin toimiko automoottorix. Katsoin toimiiko se palvelimen sisällä komennolla:  
+  -_$ curl http://localhost_ (Näyttää miltä localhost html näyttää)
+Ja katsoin myös omassa selaimessa toimiiko nginx ansennus ja automatio niinkuin kuuluu. Laitoin selaimeen http://(ip osoitteeni) ja sivulle pompahti se mitä kuulluukin.
+
+
+<img width="812" height="222" alt="image" src="https://github.com/user-attachments/assets/d8e23736-2904-4b94-a163-27dd4a48e091" />  
+<img width="322" height="172" alt="image" src="https://github.com/user-attachments/assets/295a1f37-e654-4cce-8343-69e9527cd4b1" />   
+
+# Lähteet:    
+Hacker news:  
+
+https://news.ycombinator.com/    
+Karvinen 2026:  
+
+https://terokarvinen.com/apache-ansible/    
+Ansible Community Documentation:  
+
+https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html   
+
+https://chatgpt.com/  
+
+
+
+
 
 
 
