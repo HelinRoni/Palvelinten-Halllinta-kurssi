@@ -3,7 +3,15 @@
 Artikkeli Karvinen 2026: Apache installed with Ansible - quick notes.  
   - Yksinkertaistettu ansible malli. Malli paketti-tiedosto-palvelin kuviosta. Muistiinpanot vain, ei tutoriaali.
   - Apache2 automaattinen lataus. Sivuja pystyy muokkaamaan normaalina käyttäjänä ilman sudoa taikka roottia.
-  - 
+  - Demonit niinkuin apache2 web server on jonkinverran samankaltaisia.
+  - Lataa vain demoni, muokkaa määritykset ja aloita se.
+    
+Artikkeli Ansible Community Documentation: Handlers: running operations on change.
+  - Handlereita suoritetaan vain, kun jokin tehtävä ilmoittaa niistä notify-komennolla.
+  - Niitä käytetään esimerkiksi palvelun uudelleenkäynnistämiseen asetustiedoston muuttuessa.
+  - Handler suoritetaan yleensä vasta, kun kaikki kyseisen vaiheen tehtävät ovat valmistuneet.
+  - Sama handler suoritetaan vain kerran, vaikka useampi tehtävä ilmoittaisi siitä.
+    
 
 ## Y) Etsi artikkeli keskeisestä hallinnasta.  
 
@@ -73,7 +81,8 @@ Sitten määrittelin mistä sivuni löytää ja sen asetukset. Tein nämä muuto
 <img width="448" height="257" alt="image" src="https://github.com/user-attachments/assets/0c18b92d-efd2-48d1-b2f7-fbbaf9c3ac44" />     
 
 Sitten vain testailin toimiko automoottorix. Katsoin toimiiko se palvelimen sisällä komennolla:  
-  -_$ curl http://localhost_ (Näyttää miltä localhost html näyttää)
+  -_$ curl http://localhost_ (Näyttää miltä localhost html näyttää)  
+  
 Ja katsoin myös omassa selaimessa toimiiko nginx ansennus ja automatio niinkuin kuuluu. Laitoin selaimeen http://(ip osoitteeni) ja sivulle pompahti se mitä kuulluukin.
 
 
